@@ -1,47 +1,60 @@
 # test-compiler
 
-A throwaway repo to smoke-test the published [`@neuralfog/elemix-compiler`](https://www.npmjs.com/package/@neuralfog/elemix-compiler) on every OS/arch — proves the right prebuilt binary is pulled via `optionalDependencies` and that the `ec` CLI compiles `tpl` templates.
+A throwaway repo that smoke-tests the **published** elemix compiler — both delivery
+channels, straight off npm:
 
-## What's here
-
-- `src/CounterApp.ts` — a minimal elemix component using a `tpl` template.
-- `dist/` — the compiled output (generated, gitignored).
-
-## Run it
+- **native binary** — [`@neuralfog/elemix-compiler`](https://www.npmjs.com/package/@neuralfog/elemix-compiler), the `ec` CLI (prebuilt per OS/arch).
+- **wasm** — [`@neuralfog/elemix-compiler-wasm`](https://www.npmjs.com/package/@neuralfog/elemix-compiler-wasm), compiled live in the browser.
 
 ```sh
-pnpm install            # or: npm install
+pnpm install
+```
+
+## Native binary — the `ec` CLI
+
+```sh
 pnpm compile            # runs: ec --dirs src --out dist
 ```
 
-Equivalently, ad-hoc:
-
-```sh
-pnpm exec ec --dirs src --out dist     # npx ec --dirs src --out dist
-```
-
-Success = `emitted dist/CounterApp.ts`, where the `tpl\`...\`` template has been
-lowered to a `view()` built from `template/clone/_text/_event`.
-
-## Per-platform
+Success = `emitted dist/CounterApp.ts`, where the `tpl\`...\`` template in
+`src/CounterApp.ts` has been lowered to a `view()` built from
+`template/clone/_text/_event`.
 
 `pnpm install` resolves exactly one binary for the host (the rest are skipped by
 `os`/`cpu`):
 
 | OS / arch | binary package pulled |
 | --- | --- |
-| Windows x64 | `@neuralfog/elemix-compiler-win32-x64` |
-| Windows arm64 | `@neuralfog/elemix-compiler-win32-arm64` |
+| Windows x64 / arm64 | `@neuralfog/elemix-compiler-win32-{x64,arm64}` |
 | macOS x64 / arm64 | `@neuralfog/elemix-compiler-darwin-{x64,arm64}` |
 | Linux x64 / arm64 | `@neuralfog/elemix-compiler-linux-{x64,arm64}` (static musl) |
 
-### Windows
+Windows works out of the box — the `.exe` needs no extra permissions.
 
-Works out of the box — `pnpm install` then `pnpm compile`. The `.exe` needs no
-extra permissions.
+## WASM — compile in the browser
 
-### To test the newest dev build
+A live playground: type elemix source on the left, see the wasm-compiled output on
+the right, recompiled on every keystroke.
 
 ```sh
-pnpm up @neuralfog/elemix-compiler@dev && pnpm compile
+pnpm dev                # vite → http://localhost:5173
+```
+
+Headless one-shot proof (node, no browser):
+
+```sh
+pnpm prove:wasm         # loads the published wasm, compiles src/CounterApp.ts, prints it
+```
+
+## Files
+
+- `src/CounterApp.ts` — a minimal elemix component using a `tpl` template.
+- `index.html` + `src/playground.ts` — the wasm browser playground.
+- `prove-wasm.mjs` — the headless node proof.
+- `dist/` — native `ec` output (generated, gitignored).
+
+## Testing the newest dev build
+
+```sh
+pnpm up @neuralfog/elemix-compiler@dev @neuralfog/elemix-compiler-wasm@dev
 ```
