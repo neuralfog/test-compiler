@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>elemix wasm compiler — playground</title>
+    <style>
+      body { margin: 0; font: 14px ui-sans-serif, system-ui, sans-serif; background: #0d1117; color: #c9d1d9; }
+      h1 { font-size: 15px; font-weight: 600; padding: 12px 16px; margin: 0; border-bottom: 1px solid #21262d; }
+      .panes { display: grid; grid-template-columns: 1fr 1fr; height: calc(100vh - 48px); }
+      textarea, pre { margin: 0; padding: 16px; font: 13px/1.6 ui-monospace, "SF Mono", monospace; border: 0; outline: 0; tab-size: 4; }
+      textarea { background: #0d1117; color: #c9d1d9; resize: none; border-right: 1px solid #21262d; }
+      pre { background: #010409; color: #7ee787; overflow: auto; white-space: pre-wrap; }
+    </style>
+  </head>
+  <body>
+    <h1>⚙️🦀 elemix wasm compiler — edit on the left, compiled output on the right (live)</h1>
+    <div class="panes">
+      <textarea id="src" spellcheck="false"></textarea>
+      <pre id="out"></pre>
+    </div>
+    <script type="module" src="/src/playground.ts"></script>
+  </body>
+</html>
