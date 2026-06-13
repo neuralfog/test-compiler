@@ -6,11 +6,16 @@
   "scripts": {
     "compile": "ec --dirs src --out dist",
     "dev": "vite",
-    "prove:wasm": "node prove-wasm.mjs"
+    "prove:wasm": "node prove-wasm.mjs",
+    "prove:vite": "vite build --config vite.prove.config.mjs"
   },
   "devDependencies": {
-    "@neuralfog/elemix-compiler": "0.0.0-dev.2",
-    "@neuralfog/elemix-compiler-wasm": "0.0.0-dev.2",
-    "vite": "^8.0.16"
+    "@neuralfog/elemix-compiler": "0.0.0-dev.4",
+    "@neuralfog/elemix-compiler-wasm": "0.0.0-dev.4",
+    "@neuralfog/elemix-vite": "0.0.0-dev.4",
+    "vite": "8.0.16"
+  },
+  "dependencies": {
+    "@neuralfog/elemix-vite": "0.0.0-dev.4"
   }
 }
