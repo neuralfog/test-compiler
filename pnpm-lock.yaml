@@ -1,0 +1,78 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    devDependencies:
+      '@neuralfog/elemix-compiler':
+        specifier: 0.0.0-dev.1
+        version: 0.0.0-dev.1
+
+packages:
+
+  '@neuralfog/elemix-compiler-darwin-arm64@0.0.0-dev.1':
+    resolution: {integrity: sha512-bIDhoraEdqMQ4+7cTg+dyXgtXrvCTR5m+yAHWErcdM+SBWL2I4IfVW0T0d87+Pna9pb1JMjqy4GZTa9tRl8cyg==}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@neuralfog/elemix-compiler-darwin-x64@0.0.0-dev.1':
+    resolution: {integrity: sha512-vDKVBgv+olDiWA4LTRHZo0Ys7LOEKioUoyNpdv4kREQUubQ0Ul7fcuOKlJyJDBTWM/yb4BzqOFOMQjAa5LA28g==}
+    cpu: [x64]
+    os: [darwin]
+
+  '@neuralfog/elemix-compiler-linux-arm64@0.0.0-dev.1':
+    resolution: {integrity: sha512-fvAz3MOndwVVU/8Dd4AGzkEtXtwbMos9jwf/Oz0z0hWB028hUOs644Ovb3BfwWXj8KEI+s4Mi/sZ2ZvsD5GSvw==}
+    cpu: [arm64]
+    os: [linux]
+
+  '@neuralfog/elemix-compiler-linux-x64@0.0.0-dev.1':
+    resolution: {integrity: sha512-y5Vv5UtxafAaoDwz2EDiMp6nZa3wdi62Q64N4+Rx6fzO6SBsA0R5sHZfUS2npTXXs6AqRVkQ9Ew4gJKdI72qZQ==}
+    cpu: [x64]
+    os: [linux]
+
+  '@neuralfog/elemix-compiler-win32-arm64@0.0.0-dev.1':
+    resolution: {integrity: sha512-v8rPeLhoUuH16AeoCV6Ku7ZljdekRjNRyQsO+zjcpouXBOChV9cEcvVv2TTV/qiIrjMmA9R1GfPhRtviW59oEw==}
+    cpu: [arm64]
+    os: [win32]
+
+  '@neuralfog/elemix-compiler-win32-x64@0.0.0-dev.1':
+    resolution: {integrity: sha512-UAS2sOHslhTCfJgQ/7AQBC8AO3XbrN8m5EsVMkt40ryZ3XIOzzdBn/4coXrxA61A83Qw+prxsvS/R1FOSXiMOQ==}
+    cpu: [x64]
+    os: [win32]
+
+  '@neuralfog/elemix-compiler@0.0.0-dev.1':
+    resolution: {integrity: sha512-FS8F0A0mTuivV0mYRnD2aBc40hVouvKDDS5ntWoJhqJCeOd4M/QJpdtob/RU16Tfjbr+cVagEQwEMRbqwc5+kQ==}
+    hasBin: true
+
+snapshots:
+
+  '@neuralfog/elemix-compiler-darwin-arm64@0.0.0-dev.1':
+    optional: true
+
+  '@neuralfog/elemix-compiler-darwin-x64@0.0.0-dev.1':
+    optional: true
+
+  '@neuralfog/elemix-compiler-linux-arm64@0.0.0-dev.1':
+    optional: true
+
+  '@neuralfog/elemix-compiler-linux-x64@0.0.0-dev.1':
+    optional: true
+
+  '@neuralfog/elemix-compiler-win32-arm64@0.0.0-dev.1':
+    optional: true
+
+  '@neuralfog/elemix-compiler-win32-x64@0.0.0-dev.1':
+    optional: true
+
+  '@neuralfog/elemix-compiler@0.0.0-dev.1':
+    optionalDependencies:
+      '@neuralfog/elemix-compiler-darwin-arm64': 0.0.0-dev.1
+      '@neuralfog/elemix-compiler-darwin-x64': 0.0.0-dev.1
+      '@neuralfog/elemix-compiler-linux-arm64': 0.0.0-dev.1
+      '@neuralfog/elemix-compiler-linux-x64': 0.0.0-dev.1
+      '@neuralfog/elemix-compiler-win32-arm64': 0.0.0-dev.1
+      '@neuralfog/elemix-compiler-win32-x64': 0.0.0-dev.1

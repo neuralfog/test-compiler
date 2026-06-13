@@ -1,0 +1,12 @@
+{
+  "name": "test-compiler",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "compile": "ec --dirs src --out dist"
+  },
+  "devDependencies": {
+    "@neuralfog/elemix-compiler": "0.0.0-dev.1"
+  }
+}
